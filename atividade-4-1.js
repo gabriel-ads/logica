@@ -1,52 +1,25 @@
 var n1 = 1
-var divisores = 2
-var count = 0
-var div = 1
-var quemSou = ""
-var primo = ""
+var contador = 1
+var div = 0
+
+
 while (n1 <= 50) {
-
-    if (n1 % 2 == 0) {
-        quemSou = " Sou Par"
-        while (n1 <= div) {
-            if (n1 % div == 0) {
-                divisores++
+    while (true) {
+        if (contador <= n1) {
+            if (n1 % contador == 0) {
                 div++
-            }else{
-                break
             }
-            
-        }
-        if (divisores > 2) {
-            primo = " Não sou Primo"
-            console.log(n1 + quemSou + primo)
-            divisores = 2
-            div = 1
-        } else {
-            primo = " Sou Primo"
-            console.log(n1 + quemSou + primo)
-        }
-
-    } else {
-        quemSou = " Sou Impar"
-        while (n1 <= div) {
-            if (n1 % div == 0) {
-                divisores++
-                div++
-            }else{
-                break
-            }
-            
-        }
-        if (divisores > 2) {
-            primo = " Não sou Primo"
-            console.log(n1 + quemSou + primo)
-            divisores = 2
-            div = 1
-        } else {
-            primo = " Sou Primo"
-            console.log(n1 + quemSou + primo)
-        }
+            contador++
+        } else { break }
     }
+
+    if (div >= 3) {
+        console.log()
+    } else if(n1!=1){
+        console.log(`${n1} e sou um numero primo`)
+    }
+    div = 0
+    contador = 1
     n1++
+
 }
