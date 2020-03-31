@@ -13,6 +13,7 @@ function Primo(numero) {
         }
         count++
     }
+    return numero
 
 }
 
